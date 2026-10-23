@@ -35,3 +35,13 @@ This command runs `cargo fmt`, the prose rules, `cargo clippy`, `cargo test`, `c
 ## Commits
 
 Write the commit subject in the imperative mood. Start with the part that you change, for example `fio: pin the 3.41 release`. A maintainer merges with squash or rebase.
+
+## Releases
+
+A maintainer makes a release. The steps are:
+
+1. Change the workspace version in `Cargo.toml`. Move the `Unreleased` section of `CHANGELOG.md` to a section for the new version.
+2. Merge that change, then push a tag `vX.Y.Z` on main.
+3. The release workflow builds `rkb` for each target and publishes the GitHub release with the binaries. Then it publishes `rkb` to crates.io.
+
+crates.io limits the rate of publishes. `.github/scripts/publish-crates.sh` waits and tries again, and it skips a version that is already on crates.io. Thus you can run the job again after a failure.
