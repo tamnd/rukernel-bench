@@ -1,0 +1,10 @@
+# The cost of a system call that does almost no work, per spec/21-performance-model.md section 21.2.
+
+name = "syscall-basic"
+class = "entry"
+command = "perf bench syscall basic --loop 10000000"
+metric = "time per call"
+unit = "ns"
+direction = "lower-is-better"
+gate = 5
+runs = 10

@@ -1,0 +1,26 @@
+name: New workload
+description: Ask for a benchmark to go into the bench table.
+labels: ["kind/feature", "area/perf"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Benchmark
+      description: The program, the version and the command.
+    validations:
+      required: true
+  - type: dropdown
+    id: class
+    attributes:
+      label: Class
+      description: The class from spec/19-rukernel-bench.md section 19.1.
+      options: [entry, sched, mem, storage, fsmeta, net, apps]
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: Tell which real workload this benchmark represents.
+    validations:
+      required: true

@@ -1,0 +1,11 @@
+# Two tasks send a message through a pipe and back, per spec/21-performance-model.md section 21.3.
+# The result includes two system calls, two wakeups and two context switches for each round trip.
+
+name = "sched-pipe"
+class = "sched"
+command = "perf bench sched pipe --loop 1000000"
+metric = "time per round trip"
+unit = "us"
+direction = "lower-is-better"
+gate = 5
+runs = 10

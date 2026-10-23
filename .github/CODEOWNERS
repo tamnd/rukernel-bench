@@ -1,0 +1,5 @@
+# The owner reviews each change to the reference data and to the CI.
+* @tamnd
+/configs/ @tamnd
+/machines.toml @tamnd
+/.github/ @tamnd

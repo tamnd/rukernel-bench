@@ -1,0 +1,13 @@
+# The reference fleet, per spec/19-rukernel-bench.md section 19.3.
+#
+# Each machine runs rukernel and Linux, one after the other, with the same firmware settings, the
+# same microcode and the same mitigations. The fleet is empty until milestone R4. Each entry needs
+# these keys:
+#
+# [[machine]]
+# id = "amd-genoa-1"
+# cpu = "AMD EPYC 9654, 96 cores, SMT on"
+# memory = "768 GiB DDR5-4800, 12 channels"
+# microcode = "0xa101148"
+# mitigations = "the Linux default for this CPU"
+# owner = "tamnd"
